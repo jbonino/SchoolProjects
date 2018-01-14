@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<h1>Prototype</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>Multiple instances of the same object needed in an optimal way.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Get a clone of the object you want to make multiple instances of and keep a clone</br>
+		of said object instead of recreating the object from abstract factory / concrete factory.
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p>
+		<ul>
+		<li><a href="factory_method.html">Factory</a></br></li>
+		<li><a href="abstract_factory.html">Abstract Factory</a></br></li>
+		</ul>
+		</p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p> //returns a Red,Blue, or green Square,Circle,Triangle.</br>
+		Shape shapeFactory(string shape,string color);</br>
+		</br>
+		//A Dictionary to hold shapes, key : value</br>
+		Dictionary dict = new Dictionary(); </br>
+		dict.put("square1":shapeFactory("square","red"));</br></br>
+		Shape sq1 = dict.get("square1");</br>
+		Shape sq2 = dict.get("square1");</br>
+		Shape sq3 = dict.get("square1");</br>
+		</p>
+		</br>
+		<a href="../index.html">Home</a>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<h1>Fly Weight</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>A need to reduce the number of similar objects created for better performance.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Reuse already existing similar kinds of objects by storing them and create new a object when no matching object is found.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="facade.html">Facade</a></li>
+			<li><a href="composite.html">Composite</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+		class SquareFactory(string color){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashTable table = new HashTable(); //key is color, table holds Squares</br>
+			</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createSquare(string color){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Square s = table.get(color);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	if(!s){ </br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		s = new Square(color);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		table.put(s);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	}</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return s;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+
+		</p></br>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

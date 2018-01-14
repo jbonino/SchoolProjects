@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<h1>Lazy Initialization</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>An object isnt needed to exist until a method is called.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Create the object when method is called.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+					<li><a href="proxy.html">Proxy</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+		//A program was created to show what user ate everyday and provide nutrition facts.</br>
+		//We have an object Apple that holds all information about it (calories, sugars, etc).</br>
+</br>
+		Apple a;</br>
+		string ateApple(int quantity){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!a) Apple a = new Apple();</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string nutrion_facts = a.nutrition_facts(quantity);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return nutrition_facts;</br>
+		}</br>
+
+		</p></br>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

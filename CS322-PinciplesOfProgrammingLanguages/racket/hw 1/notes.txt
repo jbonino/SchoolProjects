@@ -1,0 +1,11 @@
+
+(test-case "test pick") ;get index
+(test-case "frontier") ;no lists because of no null at end. car and cdr
+			.
+		.		5
+	.		4
+1		.
+	2		3
+
+(test-case "my-reverse"); reverse list. reverse top list stuff. 	helper function
+(test-case "deep-reverse"); recursivley reverse each list. Even 	lists in lists

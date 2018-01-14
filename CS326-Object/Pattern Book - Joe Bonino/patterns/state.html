@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<h1>State</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			A single object has to behave differently under certain circumstances.
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Allow the object to alter its behavior when its internal state changes. The object will appear to change its class.
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+		<li><a href="singleton.html">Singleton</a></li>
+		<li><a href="fly_weight.html">Fly Weight</a></li>
+
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+
+		interface HumanState{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void sharkAttack(); </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void holyWater();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void zombieInfection();</br>
+		}</br>
+</br>
+		class Human{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HumanState alive, dead, zombie, currentState; </br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alive = new Alive(this);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dead = new Dead(this);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zombie = new Zombie(this);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentState = alive;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setHumanState(HumanState state){ currentState = state; } </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void sharkAttack(){ currentState.sharkAttack(); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void holyWater(){ currentState.holyWater(); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void zombieInfection() { currentState.zombieInfection(); }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getAliveState(){ return alive; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getDeadState(){ return dead; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getZombieState(){ return zombie; }</br>
+		}</br>
+</br>
+		class Alive implements HumanState{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human human;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alive(HumanState newHuman){ human = newHuman; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void sharkAttack(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getDeadState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void holyWater(){}</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void zombieInfection(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getZombieState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class Dead implements HumanState{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human human;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dead(HumanState newHuman){ human = newHuman; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void sharkAttack(){}</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void holyWater(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getAliveState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void zombieInfection(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getZombieState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class Zombie implements HumanState{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human human;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zombie(HumanState newHuman){ human = newHuman; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void sharkAttack(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getDeadState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void holyWater(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;human.setHumanState(human.getAliveState());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void zombieInfection(){}</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+--->RUBIKS CUBE
+paste 1/9 the image onto an area slightly smaller then 1/9 the face
+-For black lines ^^^^
+
+Draw a black cube first, then draw 54 little pictures but dont draw them on
+the cube, draw slightly off the cube
+
+depth testing-
+draw 6 sides seperate with double loop
+
+3 dimensional array
+keep track of where little square is and the way its facing.
+21 stickers affected by rotation
+-1 changes orientation and not position
+-20 move around
+
+(6)	(3)	(3)
+side	row	col
+
+array of obj: Picture (1-6)
+row and col of "ninth of pic"
+ ^-(0-3)-^
+for angle (0-90-180-270)
+27 cubes
+8 corners
+12 edges
+6 centers
+1 internal
+
+"Gimbal Lock"- When two axes of rotation end up parallel so that you have essentially lost an axis of rotation
+------------------------------------------------------------------------
+
+--->GROUP PROJECT NOTES 9/16/2015
+
+FRAMES 24/sec
+-Each Frame should only include a single motion. Focus on frogger, not cars
+-Anticipated Motion. The animation that happens before the important thing
+-Exagerated Motion. Not all animation is realistic
+
+DRAWING EVERY FRAME
+-Backgrounds- Scenery
+-Things can move around on essentially stationary background. Or background that moves in a stedier predictable way
+
+INBETWEENER
+-Draw a starting config <------MAIN-----> ending config. Use math for main
+
+ANIMATION LOOPS
+-You can repeat stuff
+
+PANNING IMAGES
+-Background. Large image that you show pieces of.
+
+Realistic or Unrealisitc
+
+------------------------------------------------------------------------

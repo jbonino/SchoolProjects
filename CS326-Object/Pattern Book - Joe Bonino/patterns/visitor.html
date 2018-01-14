@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<h1>Visitor</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+			A need to perform the same action on many objects of different types.
+		<p>
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Have a genereal visitor interface and visitable interface. Have the objects your performing actions on implement the visitable interface.</br>
+			Create a Visitor that will do certain actions for each type of object. This way we dont need to check the type.</br>
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="composite.html">Composite</a></li>
+			<li><a href="command.html">Command</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+
+		interface Visitor {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Merchandise item);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Tobacco tobaccoItem);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Food foodItem);</br>
+		}</br>
+</br>
+		interface Visitable {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double accept(Visitor visitor);</br>
+		}</br>
+</br>
+		class TaxVisitor implements Visitor{ //returns price + tax.</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Merchandise item) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (item.getPrice() * .15) + item.getPrice();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Tobacco tobaccoItem) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (tobaccoItem.getPrice() * .20) + tobaccoItem.getPrice();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double visit(Food foodItem) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (foodItem.getPrice() * .07) + foodItem.getPrice();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class Merchandise implements Visitable { //same goes for Tobacco and food classes!</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double price;</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void Merchandise(double item){ price=item; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double getPrice(){ return price;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double accept(Visitor visitor){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return visitor.visit(this);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		}
+
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

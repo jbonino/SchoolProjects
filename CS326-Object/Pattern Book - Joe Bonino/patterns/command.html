@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<h1>Command</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			Issue requests without knowing any logic behind request and who is receiving it.
+		</p></br>
+
+		<h3>Solution</h3></br>
+		<p>
+			Create a object for the request that has everyhing about the command (what command does, an undo). This object is passed to an invoker </br>
+			which then passes this to a corresponding reciever object that executes the command.
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+		<li><a href="chain_of_responsibility.html">Chain of Responsibility</a></li></br>
+		<li><a href="observer.html">Observer</a></li></br>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+
+		interface Command{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void execute();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void undo();</br>
+		}</br>
+		public class Television{ //receiver</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void on(){ //turn tv on }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void off(){ //turn tv off }</br>
+		}</br>
+</br>
+		public turnOn implements Command{ //command</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Television tv;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public turnOn(Television t){ tv=t; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void execute(){ tv.on(); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void undo(){ tv.off(); }</br>
+		}</br>
+		public turnOff implements Command{ //command</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Television tv;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public turnOn(Television t){ tv=t; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void execute(){ tv.off(); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void undo(){ tv.on(); }</br>
+		}</br>
+</br>
+		public class button{ //invoker</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Command command;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public button(Command c){ command=c; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void press(){ command.execute(); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void undo(){ command.undo(); }</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

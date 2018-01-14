@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<h1>Abstract Factory</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>A need to create an instance(s) of a new object. Client needs appropriate object for system context.
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Have a abstract factory object holding concrete factories. Abstract factory knows the appropriate </br>
+		object to return.
+
+		</p></br>
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="factory_method.html">Factory Method</a></li>
+			<li><a href="builder.html">Builder</a></li>
+			<li><a href="prototype.html">Prototype</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+				<p></br>
+				//Abstract factory holds a factory for windows and mac</br>
+				Define Abstract_GUI_Factory(Specs s){</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(OS == windows ) return GUI_WindowsFactory(Specs s); </br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(OS == mac) return GUI_MacFactory(Specs s);</br>
+				}</br>
+				</p>
+		</br>
+		<a href="../index.html">Home</a>
+	</body>
+</html>

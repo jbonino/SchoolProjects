@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<h1>Chain of Responsibility</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			A need to solve a problem and one of the many object we have can solve it.
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Connect all the objects with a chain and pick one to start solving problem. If that object cant solve it</br>
+			then it passes it down to the next object on the chain.
+		<p>
+
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="composite.html">Composite</a></li>
+			<li><a href="command.html">Command</a></li>
+			<li><a href="observer.html">Observer</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Java)</h3>
+		<p>
+
+		interface mathChain(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setNext(mathChain c);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void calculate(int one,int two,string calculation);</br>
+		}</br>
+</br>
+		class addNums implements mathChain{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain nextChain;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setNext(mathChain c){ nextChain=c; }</br></br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void calculate(int one,int two,string calculation){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(calculation=="add"){ System.out.print(one.toString() + " + " + two.toString() + " = " + (one+two).toString);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ nextChain.calculate(one,two,calculation); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class subNums implements mathChain{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain nextChain;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setNext(mathChain c){ nextChain=c; }</br></br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void calculate(int one,int two,string calculation){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(calculation=="sub"){ System.out.print(one.toString() + " - " + two.toString() + " = " + (one-two).toString);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ nextChain.calculate(one,two,calculation); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class divNums implements mathChain{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain nextChain;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setNext(mathChain c){ nextChain=c; }</br></br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void calculate(int one,int two,string calculation){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(calculation=="div"){ System.out.print(one.toString() + " / " + two.toString() + " = " + (one/two).toString);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ nextChain.calculate(one,two,calculation); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class multNums implements mathChain{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain nextChain;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setNext(mathChain c){ nextChain=c; }</br></br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void calculate(int one,int two,string calculation){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(calculation=="mult"){ System.out.print(one.toString() + " * " + two.toString() + " = " + (one*two).toString);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ System.out.print("Incorrect format"); }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class test{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int main(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain add = new addNums();//initialize objects</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain sub = new subNums();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain div = new divNums();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mathChain mult = new multNums();</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.setNext(sub);//set up chain</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub.setNext(div);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.setNext(mult);</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add.calculate(10,2,"div"); //prints 10 / 2 = 5</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}
+		</p>
+		</br>
+		<a href="../index.html">Home</a>
+	</body>
+</html>

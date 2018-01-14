@@ -1,0 +1,55 @@
+GAME DESIGN DOCUMENT
+
+1.  Basic Premise Of The Game.
+
+Traverse through rooms fighting off enemies. You get points for killing enemies. Kill set amount of enemies to clear a room.
+
+2.  Victory And Progress Criteria.
+
+Number of enemies needs to clear a room increases the more rooms you clear. 
+
+Goal is to get the highest score. You can continue on for as many rooms / waves as you can survive. 
+
+3.  Failure Criteria.
+
+Die / Run out of ammo
+
+4.  Difficulty Assessment.
+
+The more rooms you clear the more difficult it gets.
+
+5.  Game Controls.
+
+Move - Arrow Keys
+Shoot - Space Bar
+
+6.  Rough Game Storyline.
+
+You need to kill the set amount of enemies set by the room.
+
+7.  Game Introduction And Controls Training.
+
+Instructions window listing controls and basic idea.
+
+8.  Game Conclusion.
+
+Die / Run out of Ammo
+
+9.  Game events.
+
+You can kill or be killed
+
+10. Basic User Interface.
+
+Start Screen with Play, High Scores, Instructions, and Exit options.
+Gameplay
+Upgrades Screen after room gets cleared
+
+11. Scoring And Other Game Measurements.
+
+Kill enemies to increase score.
+If you finish a room before time runs out you get bonus points.
+
+12.  Multiplayer And Online Modes.
+
+Nope

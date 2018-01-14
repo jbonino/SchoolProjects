@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<h1>Decorator</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>An existing object needs a new function(s) but we dont want to change its original structure.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Create a new object to "wrap" the already existing object. This new object will keep existing</br>
+		object's methods' intact but will add additional functionality.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="adapter.html">Adapter</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+		//We have a circleFactory(int radius) that builds a circle and returns it.</br>
+		//We want to add a color to the circle without manipulating the circleFactory method </br>
+</br>
+		class colorCircleFactory(){</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ColorCircle create(string color,int radius){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return new ColorCircle("red",circleFactory(radius)); //ColorCircle holds a color and Circle object</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		class ColorCircle(){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private Circle circle;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private string color;</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void ColorCircle(string color,Circle circle){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	this.circle= circle;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	this.color = color;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void draw(){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	circle.draw();</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	do coloring!;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+		</p></br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

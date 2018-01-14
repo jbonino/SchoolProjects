@@ -1,0 +1,25 @@
+make socket
+open log file
+while{
+	accept
+	int pid=fork();
+	if(pid==-1)
+		error
+	else if(pid==0)
+		ur child
+		read
+		parse 
+		write log file
+		get file
+		if(!file)
+			send error page
+		else
+			send file
+		close
+		exit
+	else
+		do
+			w=waitpid(-1, &status, WNOHANG)
+		while (w>0)
+}
+exit

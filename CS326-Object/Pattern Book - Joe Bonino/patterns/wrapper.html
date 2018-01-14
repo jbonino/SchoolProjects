@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<h1>Wrapper</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			A object needs more functionality but cant tamper with objects structure.
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Create a wrapper object that holds the same functionality of original object but then also adds some.
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="Adapter.html">Adapter</a></li>
+			<li><a href="bridge.html">Bridge</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		public class Parser{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String rawInput</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Parser(String s){ rawInput=s; }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public String parseString(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String parsedString = //do some parsing on rawInput</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return parsedString;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+		//we need the rawInput from parser for some reason</br>
+</br>
+		public class ParserWrapper{ //wrapper class</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String rawInput;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parser parser;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public ParserWrapper(String s){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawInput=s;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parser = new Parser(s);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public String parseString(){ return parser.parseString; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public String rawString(){ return rawInput; }</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

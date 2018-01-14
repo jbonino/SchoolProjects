@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<h1>Strategy</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+			A need to use one of several behaviors dynamically.
+		<p>
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Create objects which represent various strategies and a context object whose behavior varies as per its strategy object.
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+
+		<p><ul>
+			<li><a href="fly_weight.html">Fly Weight</a></li>
+			<li><a href="template_method.html">Template Method</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		Class Human{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int age;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Job j;</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string askJob(){ return j.job(); } </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setJob(Job newJ){ j=newJ; }</br>
+</br>
+		}</br>
+</br>
+		interface Job{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string job();</br>
+		}</br>
+</br>
+		class hasJob implements Job{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string job(){ return "I have a job!"; } </br>
+		}</br>
+</br>
+		class noJob implements Job{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string job(){ return "I dont have a job!"; }</br>
+		}</br>
+</br>
+		class Joe extends Human{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void Joe(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Job = new noJob(); //can dynamically change later with setJob method.</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}
+
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

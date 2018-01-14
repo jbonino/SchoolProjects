@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<h1>Proxy</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>Want to reduce the memory footprint of loading an object. Only initialize when object needed.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Make a object that represents the functionality of another object. Let object 'A' be our new Proxy object</br>
+		and object 'B' is the represented object. 'A' will hold 'B's object that lets it communicate to outside world.
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="adapter.html">Adapter</a></li>
+			<li><a href="decorator.html">Decorator</a></li>
+			<li><a href="lazy_initialization.html">Lazy Initialization</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+
+		//We create a JPEG object that holds an image and can display itself.</br>
+		//Now we us a  proxyJPEG to preload the image and JPEG will be instantiated.</br>
+</br>
+		class proxyJPEG(){</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JPEG image;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string filepath;</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor(f){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	filepath=f;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void display(){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	if(!image) image = new JPEG(filepath);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	image.display();</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		}
+
+
+		</p></br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

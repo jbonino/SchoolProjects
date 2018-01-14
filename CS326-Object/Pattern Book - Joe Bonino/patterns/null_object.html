@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<h1>Null Object</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			Program crashes when something is Null and used in program.
+		</p></br>
+
+		<h3>Solution</h3></br>
+		<p>
+			Create a Null object that does nothing instead of crashing program. This object extends an abstract class and is used in replace of Null.
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+		<li><a href="singleton.html">Singleton</a></li>
+		<li><a href="state.html">State</a></li>
+		<li><a href="visitor.html">Visitor</a></li>
+
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+
+		public abstract class AbstractWeapon {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private String name;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public abstract boolean isNull();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public abstract String getName();</br>
+		}</br>
+</br>
+		public class Axe extends AbstractWeapon{</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Axe(string name){ this.name=name; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public String getName(){return name;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public isNull(){ return false };</br>
+		}</br>
+</br>
+		public class NullWeapon extends AbstractWeapon{</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public String getName(){"Weapon does not exist.";}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public isNull(){ return true };</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

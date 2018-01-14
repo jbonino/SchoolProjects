@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<h1>Facade</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>A complex system that is hard to communicate with.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Each system has a Facade object that takes care of all communication with external systems.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="singleton.html">Singleton</a></li>
+			<li><a href="adapter.html">Adapter</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+
+		//There is an online shop with a Checkout object. This object calculates an orders total price.</br>
+</br>
+		class Checkout(){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShippingCalc shipCalc = new ShippingCalc();</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int total(Item item, string address){ //Item holds items info and price.</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return tax + item.getPrice() + shipCalc.getPrice(item,address);</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		}</br>
+
+		</p></br>
+		<a href="../index.html">Home</a>
+	</body>
+</html>

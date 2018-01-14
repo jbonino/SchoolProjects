@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<h1>Collecting Parameter</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>
+			A single bulky method that accumulates information to a local variable.
+		</p></br>
+
+		<h3>Solution</h3></br>
+		<p>
+			Accumulate results to a Collecting Parameter that gets passed to extracted methods.
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<li><a href="chain_of_responsibility.html">Chain Of Responsibility</a></li>
+		<p><ul>
+
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		String[] userFiles = ...</br>
+		List userList = new ArrayList();</br>
+		for (int i=0; i < userFiles.length; i++){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addUsersTo(userFiles[i], userList);</br>
+		}</br>
+		</br>
+		public void addUsersTo(String userFileName, List userList) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</br>
+ 		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

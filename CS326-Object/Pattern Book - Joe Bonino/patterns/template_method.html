@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<h1>Template Method</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+			Create a bunch of similar objects that differ slightly.
+		<p>
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+		Provide a class that contains a method that provides the steps of the algorithm. It allows subclasses to override some of the methods.
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+			<a href="factory_method.html">Factory Method</a></br>
+			<a href="strategy.html">Strategy</a>
+		<p><ul>
+
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		abstract class Burger(){
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final makeBurger(){ //so subclasses cant change this method. </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cutBun();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(wantsMeat) addMeat();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(wantsCheese) addCheese();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(wantsVeg) addVeg();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrapBurger();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstract void addMeat();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstract void addCheese();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstract void addVeg();</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void cutBun(){ //do cutting! }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void wrapBurger(){ //wrap it! }</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean wantsMeat(){ return true; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean wantsCheese(){ return true; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean wantsVeg(){ return true; }</br>
+		}</br>
+</br>
+		class vegBurger(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean wantsMeat(){ return false; }</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addMeat(){}</br> //still needs to be defined but does nothing
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addCheese(){//add cheese!}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addVeg(){//add veges!}</br>
+		}</br>
+</br>
+		class regularBurger(){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addMeat(){//add meat!}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addCheese(){//add cheese!}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void addVeg(){//add veges!}</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

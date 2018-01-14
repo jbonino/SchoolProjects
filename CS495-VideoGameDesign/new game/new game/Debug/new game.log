@@ -1,0 +1,45 @@
+﻿Build started 4/26/2016 9:50:50 PM.
+     1>Project "C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\new game\new game.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W2 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\CS495\Common.cpp ..\..\CS495\Gun.cpp ..\..\CS495\Manager.cpp ..\..\CS495\Menu.cpp ..\..\CS495\Monster.cpp ..\..\CS495\Player.cpp ..\..\CS495\World.cpp
+         World.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\world.cpp(97): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+         Player.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\player.cpp(9): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\player.cpp(110): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\player.cpp(111): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\player.cpp(112): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\player.cpp(113): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+         Monster.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(16): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(19): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(28): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(47): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(50): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(51): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(67): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(71): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(85): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\monster.cpp(89): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+         Menu.cpp
+         Manager.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\manager.h(29): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\cs495\manager.cpp(281): warning C4244: '=' : conversion from 'GLfloat' to 'int', possible loss of data
+         Gun.cpp
+         Common.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\Debug\new game.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\Debug\new game.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\Debug\new game.lib" /MACHINE:X86 Debug\Common.obj
+         Debug\Gun.obj
+         Debug\Manager.obj
+         Debug\Menu.obj
+         Debug\Monster.obj
+         Debug\Player.obj
+         Debug\World.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         new game.vcxproj -> C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\Debug\new game.exe
+     1>Done Building Project "C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\new game\new game\new game.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:21.98

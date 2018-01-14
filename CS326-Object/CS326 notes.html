@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://euclid.nmu.edu/~jsarkela/cs326/notes.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>CS326 notes</title>
+  <style type="text/css"></style></head>
+  <body>
+	<h1>Object Design and Software Engineering</h1>
+	<p>This course is titled Object design, but it will cover aspects
+of software engineering as well. We shall learn the principles of agile software development and apply these principles during the semester.</p>
+	<h2>Objects</h2>
+	<p>
+<b>Q:</b> When does an object come into existence?</p>
+	<p>
+<b>A:</b> When an observer draws a distinction that separates that object from every other "thing" in the universe. 
+	</p>
+	<h3>The Formal View of Objects</h3>
+	<p>
+Object oriented design is a process of arranging a collection of collaborating objects with the intention of getting a job done. Hidden in that previous sentence are a number of subtle assumptions.
+	</p><ul>
+		<li>The designer has an intention that affects how objects are brought into existence.</li>
+		<li>There is some mechanism by which one object can signal and affect another object.</li>
+		<li>The meaning of the program is in some way characterized by how a signal moves through a structure of distinctions. (How a message passes between objects.)</li>
+	</ul>
+	<p>
+The person who coined the term object-oriented programming has since said he regrets the term. This is because the interesting part of a good object design is not the objects themselves, but those spaces between them in which messages are exchanged.
+	</p>
+	<h3>The Dramatic View of Objects</h3>
+	<p>
+A classical definition of drama is that it occurs when characters in a scene are in conflict. Drama is the process by which the interaction of the characters results in a resolution of the conflict. Often when we are designing object interactions, it is useful to think about the problem like a playwright. Who is in the scene? With whom do they interact? What are the scenes in the bigger story. How do all of these things relate to the overall telling of the story? 
+	</p>
+	<p><b>Definition: Design is the process of resolving tension through the harmonious arrangement of objects.</b></p>
+	<h3>Software Architecture</h3>
+	<p>
+A software architecture may be viewed as a large scale design. Rather than objects, we are talking about subsystems and components. In conversation, it is usefule to distinguish between two distinct kinds of architectural considerations.
+	</p><ul>
+		<li>Technical Architecture</li>
+		<p>
+The term, technical architecture, refers to the technologies and "materials" used in the architecture. This can include choices of particular database, implementation language, communication protocols, and pre-existing software frameworks.
+		</p>
+		<li>Logical Architecture</li>
+		<p>
+The term, logical architecture, refers to the actual structure of relationships between the software components and how that resolves the larger application design problem.
+		</p>
+		<h4>Important Logical Architectures</h4>
+		<ul>
+			<li><b>Layered Architecture</b></li>
+			<p>
+A layered architecture is arranged by layering one level of functionality upon another. In a layered architecure, objects in lower layers should not have direct knowledge of objects in higher layers. Communication between layers in an architecture is called an <b>interface</b>. Communication between objects in the same layer of an architecture is called a <b>protocol</b>.
+			</p>
+			<li><b>Signal Flow Architecture</b></li>
+			<p>
+A signal flow architecture models the software as a chain of black boxes that transform a signal. A great example of a signal flow architecture, is the graphics pipeline in a game engine. The architecture makes it easy to apply many processors to the task of generating a frame, because each box in the pipeline maybe implemented by a separate processor. Signal flow architectures are commonly used on multiprocessor maches that have multiple cpu cores and graphics cores.
+			</p>
+			<li><b>Blackboard Architecture</b></li>
+			<p>
+A blackboard architecture is used to distribute processing across many processors. Each processor is associated with one or more logical <b>agents</b>. All of the agents have a common block of data that they are working on, this is known as the <b>blackboard</b>. Usually, an agent is responsible for a particular portion of the blackboard and coordinates with other agents using some kind of message passing. Blackboard architectures are commonly used on clustered processors.
+			</p>
+		</ul>
+	</ul>
+	<p></p>
+	<h2>Frameworks</h2>
+	<p>
+A framework is a reusable design. It is specified interms of the classes involved in a collaboration and how they solve a particular problem. Software patterns were invented as a means of specifying how a framework should be used.
+	</p>
+	<p>
+All frameworks require some kind of specialization in order to be used.The framework is a general solution, in order to use it, it must be tailored to our specific needs. There are two ways in which a framework may be specialized, inheritance and composition. Inheritence means that we will be subclassing classes introduced in the framework and overriding one or more of its methods. Composition means that we will be plugging in different objects and specializing behavior by delegating to that object.
+	</p>
+	<ul>
+	<li>Whitebox frameworks</li>
+	<p>
+A framework that is specialized by means of inheritance is known as a white box framework, because it has intimate knowledge of how its super class is written. Whitebox frameworks tend to be easier to design and implement. Whitebox frameworks tend to be more brittle over time.
+	</p>
+	<li>Blackbox framworks</li>
+	<p>
+A framework that is specialized by means of composition is known as a black box framework, because the service provider objects that get plugged in have no knowledge of how the rest of the framework is implemented. Blackbox frameworks tend to be harder to design. Black box frameworks tend to have more classes. Black box frameworks tend to be more flexible over time.
+	</p>
+	</ul>
+	<h2>Patterns</h2>
+	<p>
+The pattern movement in software was inspired by the architect, Christopher Alexander. He describes patern languages in his books <i>A Timeless Way of Building</i> and <i>Notes on the Synthesis of Form</i>.
+He invented pattern languages to facilitate the design of buildings. Kent Beck, Ralph Johnson and others recognized that the principles applied equally well to the generation of software architectures.
+	</p>
+	<h3>Why Patterns?</h3>
+	<p>
+Christopher Alexander noticed that good architectures exihibit a quality without a name. He invented a process of building that quality into an architecture. This process consists of a system of composition of known forms called a pattern language.
+	</p>
+	<p>
+This process was called <i>The Timeless Way</i> by Alexander. It is the method by which we make something out of nothing but ourselves. It cannot be attained, but will happen of its own accord, if we will only let it. Thus my number one rule: <b>Allow, don't force.</b>
+	</p>
+	<p>
+The quality without a name can be distinguished. It gains its character by the patterns of events that keep happening there. We call a structure of objects that solve a design problem a <b>framework</b>. The character and reason why the framework is useful is expressed by the patterns of messages that pass through that structure.
+	</p>
+	<p>
+Our frameworks are built out of interlocking structures of objects. These structures of objects are expressed as patterns. Our framework and the design problem it solves is expressed in a language of patterns,  in which the meaning is in the relationships between these patterns and how they interconnect.
+	</p>
+	<ul>
+		<li>a pattern language is the seed of all the things we can build</li>
+		<li>the act of building is an act of differentiation</li>
+		<li>it is not a process of addition, but a process of unfolding</li>
+		<li>we start with a whole, and use a structure of patterns to reveal the internal
+structure of the thing we are building</li>
+	</ul>
+	<h3>Anatomy of a Pattern</h3>
+	<p>
+There are a number of ways of defining a pattern, but in this class we shall use the following definition. <b>A software pattern consists of a name, a description of the relevant design issue, a description of how that design issue may be resolved, and related patterns</b>.
+	</p>
+	<h3>Important Design Patterns</h3>
+	<ul>
+<li>Double Dispatch</li>
+<li>Chain of Responsibility</li>
+<li>Command</li>
+<li>Visitor</li>
+<li>Interpreter</li>
+<li>Null Object</li>
+<li>Observer</li>
+<li>State</li>
+<li>Strategy</li>
+<li>Template Method</li>
+<li>Collecting Parameter</li>
+<li>Wrapper</li>
+<li>Adapter</li>
+<li>Bridge </li>
+<li>Composite</li>
+<li>Decorator</li>
+<li>Facade</li>
+<li>Flyweight</li>
+<li>Proxy</li>
+<li>Abstract Factory</li>
+<li>Builder</li>
+<li>Factory Method</li>
+<li>Prototype</li>
+<li>Singleton</li>
+	</ul>
+	<h2>Software Engineering</h2>
+	<p>Engineering, is the science, art, skill, and profession of acquiring and applying scientific, economic, social, and practical knowledge in order to design, build, and maintain structures, machines, devices, systems, materials and processes. Software Engineering is a composite of knowledge areas which in combination lead to well documented, reliable, and maintainable software systems. We shall study software engineering in the context of a collection of best software development practices.</p>
+	<h3>Elements of Software Engineering</h3>
+	<ul>
+		<li>Requirements</li>
+		<li>Design</li>
+		<li>Construction</li>
+		<li>Testing</li>
+		<li>Maintenance</li>
+		<li>Configuration Management</li>
+		<li>Engineering Management</li>
+	</ul>
+	<h2>Our Process</h2>
+<p>
+We shall be using an agile methodology comprised of practices made popular by Responsibility Driven Analysis and Design (RDAD), Extreme Programming (XP), Scrum, and MOB programming. These methodologies are organized around a set of practices that in combination tend to converge on systems that deliver value to the customer.
+</p>
+<p>
+We start by acknowledging what set of values we share. This is important, because software development occurs in a community. And any time more than one person is involved in an activity, conflict will occur. One way we can defuse conflict, is by asking ourselves which point of view better serves the values we have agreed that we share.
+</p>
+	<h3>Our Values</h3>
+	<ul>
+		<li>Simplicty</li>
+		<li>Courage</li>
+		<li>Respect</li>
+		<li>Feedback</li>
+		<li>Communication</li>
+	</ul>
+<p>
+A methodology is a set of best practices that are designed to deliver a quality work product. Software methodologies focus on the following five activities in order to support the higher level goals of software engineering.
+</p>
+	<h3>Software Development Activities</h3>
+	<ul>
+		<li>Analysis</li>
+		<li>Design</li>
+		<li>Code</li>
+		<li>Test</li>
+		<li>Release</li>
+	</ul>
+	<h3>Important Methodologies</h3>
+<p>
+There are three important methodologies that you should recognize by name. The way they differ is characterized not by the activities, but by how those activities are organized.
+</p>
+	<ul>
+		<li>Waterfall</li>
+<p>Each activity is performed in sequence. Issues that arise in any given activity may feedback to the previous activity. This linearity is the biggest problem with the water fall method. In practice, most of the scheduled time is spent in analysis and design. This has led to the expressions "Analysis Paralysis" and "Big Design Up Front".</p>
+		<li>Spiral</li>
+<p>Analysis, design, coding, and testing occur in a spiral trajectory. Do just enough analysis to get a preliminary design. Do enough coding to get an approximation of that design working, test to ensure that the code is acceptable. Then do more analysis... etc. This is a much better approach to building large systems than the waterfall. The big failing of the spiral methodology, is that code release only occurs at the end of the project.</p>
+		<li>Agile</li>
+<p>Agile does enough planning to describe a target release. Short intervals of work, known as iterations or sprints, are performed. Each sprint begins with sprint planning to select a "reasonable" amount of work to accomplish. During the spring the whole team will be engaged in all of the software development activities. Ideally, a sprint ends with an internal release and retrospective of the weeks work to help put work activities into context. During sprint planning, there is an activity known as steering. The team looks at where they are relative to the beginning of the sprint, and then as necessary adjusts the direction of development to move closer to the planned goal. If a project keeps diverging from the bigger plan, that is important information. The team must determine why and if necessary adjust the big target goal appropriately. The purpose of a plan is not to predict the future, but rather to detect when things are developing in novel and unexpected ways. The novel and unexpected must not be ignored.</p>
+	</ul>
+	<h3>Agile Practices</h3>
+	<ul>
+		<li>Test Driven</li>
+<p>Before code is written, developers write tests. A code feature may not be claimed to exist until there is a test that checks for its presence. This will cause the team do just enough analysis and design to get the test written. By writing tests first, it focuses the developers mind upon what the code is supposed to do, not how it does it. Unit tests serve a number of other purposes. A unit test is the best kind of software documentation, because it is self validating. A unit test can serve to defuse disputes over changes to the code base. If a proposed change makes the code simpler, and it passes all of the test, then that change should be integrated into the code base.
+</p>
+<p>Users write acceptance test plans. QA will write system and integration tests.</p>
+		<li>Whole Team</li>
+<p>The expression, whole team, refers to the fact that business and development should be working as a unit. Ideally, business will find a planned user of the system to be available to the team throughout project development. Each day, every team member informs the rest of the team of: 1) What I did yesterday. 2) What I plan to do today. 3) Problems I have encountered. This information is usually conveyed at a morning meeting in which all participants have to stand up. This is so that the meeting will be concise.</p>
+<p>In the best of all possible worlds, meetings are always face to face. Any kind of technological mediation of a communication channel is a limitation. The single greatest cause of failed projects, is breakdown of communication.</p>
+<p>One of the most important aspects of whole team is understanding who on the team is responsible for providing answers to questions as they arise. Engineers should not attempt to provide answers to business issues, and business people should not be answering technical questions.</p>
+		<li>Planning Game</li>
+<p>Planning for a sprint or release is structured as a game. The game pieces are index cards. In a release planning session, each card has a description of a use case along with a complexity estimate. In sprint planning, each card has a description of an engineering task. Note that a use case has a wide variety of possible resolutions, while an engineering task has a clear completion. As we identify engineering tasks, they go into a backlog. Each sprint, we identify how many tasks we expect to be able to finish in a sprint.</p>
+		<li>Retrospectives</li>
+<p>After each sprint, the team reflects on the previous sprint. What worked, what problems arose, what discoveries were made. At this time, it is appropriate to consider the trajectory of the project and if a course correction is needed.</p>
+		<li>Pair Programming</li>
+<p>Ideally, every line of code is written with two programmers and one machine. The driver has control of the keyboard and mouse. The observer is responsible for thinking strategically and reviewing the process. An important skill to develop is communicating to your partner what you are thinking about and how to go forward. Each partner is responsible for keeping the other "honest" by supporting coding standards and ensuring necessary tests get written.</p>
+		<li>Collective Code Ownership</li>
+<p>No one person "owns" any piece of code. The code is owned by the whole team. It is in the interests of everyone, that knowledge of how the system works be spread as widely as possible.</p>
+		<li>Coding Standards</li>
+<p>Coding standards imply both formatting standards for source code, as well as best code practices. Because of collective code ownership, it is important that all code generated for the project looks the same. This reduces the cognitive burden on programmers when they have to make changes to code they did not write.</p>
+		<li>Project Velocity</li>
+<p>During each sprint, there is a complexity metric from 1 to 5 on each engineering task. At the end of a sprint, the complexity numbers for all completed tasks are added together. This number is the number of total complexity points that should be considered reasonable for the next sprint. This is not a competition. One number is calculated for the whole team. It is only used to gauge what a realistic amount of work for a wprint would be for that team.</p>
+		
+		<li>Continuous Code Integration</li>
+<p>Each time an engineering task is completed, the code gets integrated into the development branch of the project. Code is not integrated if any tests fail to green light.Code that is rejected from integration are pushed back to the developer.</p>
+		<li>Constant Design Improvement</li>
+<p>Over time and with experience, we will develop better ideas about how the code should be structured. Whenever you need to touch code for a development task, ask yourself how could this code be better. Eliminate redundancy, minimize conditionals, keep information as local as possible are among the considerations. You are not allowed to break any tests that previously passed.</p>
+		<li>Frequent Releases</li>
+<p>The team keeps sprints short. Frequent releases support feedback and communication with the customer. They also force the team to automate as much of the release process as is practical. Both of these things are valuable on a successful project.</p>
+		<li>Sustainable Pace</li>
+<p>If you are paid for a 40 hour work week, work 40 hours. Be ready to work when you arrive, when you are done, be ready to pay attention to the other dimensions of your life. Ensure that the client has reasonable expectations, and that you are planning for the long haul. Finally, show respect to get respect.</p>
+	</ul>
+	<h2>Mananging an agile process</h2>
+	<h3>Identify the System Context</h3>
+<p>The system context is the outer boundary of the software system being developed. This boundary is characterized by all the points of contact at which control or information may pass in or out of the system. We find these points by identifying all of the roles that external agents, human or automaton, that communicate with the system. We call these roles, actors.</p>
+	<h3>Create Use Cases</h3>
+<p>The next level of refinement is to characterize what occurs at each point of contact. We create a description of each way an actor uses or is used by the system. We call these use cases. <b>A use case has a name, a list of actors, a description of the usage, and a list of important considerations</b>.</p>
+	<h3>Develop Conversations (Scenarios)</h3>
+<p>Until now, we have been concerned with what occurs outside the boundary of the system. Now we want to start describing what occurs inside the boundary of the system and any important sequencing of control and information that occurs in that process.Note well: There will be many conversations that apply to a particular use case. We shall focus on the main path until we have covered the breadth of the system. This is often called the "happy path". We want to understand the happy path of all of the essential use cases prior to exploring what happens when things go awry. This will give us the context we need inorder to make informed decisions about how to handle the exceptional cases.</p>
+<p>The conversation is expressed as a two column table. One column is actor actions, and the other is system responses. In the system responses column we are attempting to identify all of the activities the system is responsible for performing on behalf of the actor. We will use these responsibilities to guide our actual object design.</p>
+<br>Use Case: Login<br>
+<br>Actors: Dev, Admin, Customer<br>
+<br>Alternative: Main Course<br>
+<table border="1" summary="Use Case: Login Actors: Dev, Admin, Cust Alt. Main">
+<tbody><tr>
+<th id="h1">Actor actions</th>
+<th id="h2">System responses</th>
+</tr>
+<tr>
+<td headers="h1"></td>
+<td headers="h2">prompt for login</td>
+</tr>
+<tr>
+<td headers="h1">provide login credentials</td>
+<td headers="h2"></td>
+</tr>
+<tr>
+<td headers="h1"></td>
+<td headers="h2">verify credentials(1)</td>
+</tr>
+<tr>
+<td headers="h1"></td>
+<td headers="h2">retrieve user capabilities/permissions</td>
+</tr>
+<tr>
+<td headers="h1"></td>
+<td headers="h2">create session on behalf of user</td>
+</tr>
+</tbody></table>
+<p>All user interface details are suppressed. We attempt to identify as many responsibilties that the system must support. We are not programming, so no conditionals or loops. Use footnotes to identify places where there may be important alternative conversations.
+	</p><h3>Move from Analysis to Design</h3>
+<p>Up to this point, all of our activities have been analysis activities geared toward characterizing the product requirements. We are now ready to begin object design proper.</p>
+	<h4>Object Stereotypes</h4>
+<p>At the early stages of design, we stereotype the behavior of objects to help us get a point of view about the role that object will play in the design. We can explore alternatives by considering what would happen if we mixed in other stereotypes to an object we have already identified. We will use stereotypes to help us choose appropriate objects from our list of candidate objects when we are designing.</p>
+<ul>
+	<li>Information Holder</li>
+	<li>Data Structurer</li>
+	<li>Service Provider</li>
+	<li>Coordinator/Controller</li>
+	<li>Interfacer</li>
+</ul>
+	<h4>CRC Cards</h4>
+CRC stands for <b>C</b>lass, <b>R</b>esponsibilities, <b>C</b>ollaborators. We use an index card to collect information about classes we are designing. On the blank side of the card, we put the class name, stereotypes that apply, and a short declarative sentence that describes the purpose of the class. We make one of these cards for each of our candidate classes. On the lined side, we put the class name at the top. On the left side of the card, we will put messages that the class must support, and on the right side, the classes with which the class collaborates to do its work.
+	<h3>Develop Object Interactions</h3>
+<p>Pick a conversation. Draw a wavy line toward one side of the paper. Place the actor the small side, and we will show objects on the large side. The wavy line represents the system boundary. We should be able to identify the back and forth of the conversation occurring across this boundary. Represent an object with an ellipse and label it with a name. If the object is a class, use the class name. If the object is an instance of a class, use the indirect article, a or an, followed by the class name. Show message sends with an arrow that terminates at the receiver of the message. The arrow should be labeled with a sequence number and the name of the message and any arguments. If there is a return value, it should be written underneath the message.</p>
+<p>
+When we have an interaction that implements a conversation, we step back and consider, how does each object learn about objects with which it interacts? Find the class card for each card involved in an interaction, and make sure that every message sent to that object is represented as a responsibility on the CRC card. 
+  
+
+</p></body></html>

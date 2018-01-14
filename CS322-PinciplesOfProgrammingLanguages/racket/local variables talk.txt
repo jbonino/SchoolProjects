@@ -1,0 +1,31 @@
+define local variables
+
+(let //scope is in let definition
+  ((var1 0 )
+  (var2 0)))
+scope of vars is the form which they appear.
+
+for(let i=0;i<9;i++){
+
+} //creates new i for each function closure. easier
+
+Symbol table
+*associates key to a value
+
+association list!---
+family
+'((husband . fred) (wife . wilma))
+
+enter: (assoc 'husband family)
+return: '(husband . fred)
+enter: (cdr (assoc 'husband family))
+return: 'fred
+
+enter:(map cdr family)
+return:'(fred wilma)
+---------------------
+
+if u use '!' then you are actually changing data in the function. list surgery homie
+You can use this to make a function linear time compared to polynomial time.
+
+Abstract Data Types---da Fuck?

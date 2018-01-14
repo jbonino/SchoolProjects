@@ -1,0 +1,1 @@
+'From Squeak5.1 of 23 August 2016 [latest update: #16548] on 22 February 2017 at 3:40:04 pm'!Object subclass: #NameOfSubclass	instanceVariableNames: 'desc reviewList'	classVariableNames: ''	poolDictionaries: ''	category: 'SeniorProject-ConsumerItem'!

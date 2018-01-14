@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<h1>Composite</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>A bunch of similar functions are needed to complete a task.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Put these functions in their own objects responsibly and cordinate them in a tree structure.</p></br>
+
+		<h3>Related Patters</h3></br>
+				<p><ul>
+					<li><a href="visitor.html">Visitor</a></li>
+					<li><a href="chain_of_responsibility.html">Chain of Responsibility</a></li>
+					<li><a href="decorator.html">Decorator</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		//Our employee class composes of a name,dept,salary, and subordinates</br>
+		class Employee {</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string dept;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int salary;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;Employee&gt; subordinates;</br>
+</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Employee(String name,String dept, int sal) {</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   this.name = name;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   this.dept = dept;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   this.salary = sal;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   subordinates = new ArrayList&lt;Employee&gt;();</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void add(Employee e) {</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   subordinates.add(e);</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void remove(Employee e) {</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   subordinates.remove(e);</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public List&lt;Employee&gt; getSubordinates(){</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  return subordinates;</br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+
+	</p>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<h1>Interpreter</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+		<p>Need a standard way to evaluate language grammar or expression.
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+			Create an object to interpet the context. Create an abstract class of expressions that defines all methods needed to convert data.</br>
+			Create concrete class for each expression.</br>
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+		<li><a href="composite.html">Composite</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		 //expecting this syntax "1 dollar to pennies" </br>
+		 //						 "quantity type to type" </br>
+		 class ConversionContext{</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double quantity;</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string fromType,toType,input; //dollar - pennies</br>
+
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void ConversionContext(string i){</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input=i;</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity = Double.parseDouble(input[0]);</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fromType = string manipulation; //dollar</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toType = string manipulation; //pennies</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getQuantity(){ return quantity; }</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getFromType(){ return fromType; }</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getToType(){ return toType; }</br>
+		 }</br>
+</br>
+		 abstract class Expression{</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstact double dollar(double q);</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstact double quarter(double q);</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstact double penny(double q);</br>
+		 }</br>
+</br>
+		 class Dollar extends Expression{</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double dollar(double q){return q;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double quarter(double q){return q*4;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double penny(double q){return q*100;}</br>
+		 }</br>
+</br>
+		 class Quarter extends Expression{</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double dollar(double q){return q/4;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double quarter(double q){return q;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double penny(double q){return q*25;}</br>
+		 }</br>
+</br>
+		 class Penny extends Expression{</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double dollar(double q){return q/100;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double quarter(double q){return q/25;}</br>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double penny(double q){return q;}</br>
+		 }
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

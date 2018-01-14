@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<h1>Builder</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>Need to build a complex object in an easy way.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Build the object step by step with smaller objects.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p>
+		<ul>
+			<li><a href="factory_method.html">Factory Method</a></li>
+			<li><a href="composite.html">Composite</a></li>
+			<li><a href="prototype.html">Prototype</a></li>
+			<li><a href="singleton.html">Singleton</a></li>
+		</p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+</br>
+		//We want to build a car several objects.</br>
+		//We just tell the Car class the name of the car and the builder does the rest. </br>
+
+		class CarBuilder(){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engine engine;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame frame;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transmission trans;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name;</br>
+</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void CarBuilder(string carName){</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	name=carName;</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	engine = new Engine(carName); //holds all engine specs</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fram = new Frame(carName); //holds all Frame specs</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	trans = new Transmission(carName); //holds all Transmission specs</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+
+
+		</p></br>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

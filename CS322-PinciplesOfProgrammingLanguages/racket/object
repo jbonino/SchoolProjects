@@ -1,0 +1,21 @@
+;object!
+
+(define (make-car manufacturer)
+  (let
+      ((make manufacturer)) ;a pair in a list
+    (define (get-make)
+      make)
+    (define (set-make mfg)
+      (set! make mfg))
+    (define (message-send selector)
+      (cond
+        ((eq? selector 'get-make) get-make)
+        ((eq? selector 'set-make) set-make)
+        (else error 'doesNotUnderstand)))
+    message-send))
+
+
+    ;how to test
+    (define my-car(make-car 'subaru))
+    ((my-car 'get-make))
+    return: 'subaru

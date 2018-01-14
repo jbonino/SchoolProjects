@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<h1>Bridge</h1>
+	</head>
+
+	<body>
+		<h3>Forces</h3></br>
+			A need to change an abstraction and a concrete class independently.
+		<p>
+
+		</p></br>
+
+		<h3>Solution</h3></br>
+		We have a interface which is acting as a bridge implementer and concrete classes implementing the interface. </br>
+		Create an abstract class and we will use object of the interface.
+		<p>
+
+		</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="state.html">State</a></li>
+			<li><a href="adapter.html">Adapter</a></li>
+		</ul></p></br>
+
+
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+		public interface DrawAPI {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void drawCircle(int radius, int x, int y);</br>
+		}</br>
+</br>
+		public class GreenCircle implements DrawAPI {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void drawCircle(int radius, int x, int y) { //draw circle }</br>
+		}</br>
+</br>
+		public class RedCircle implements DrawAPI {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void drawCircle(int radius, int x, int y) { //draw circle }</br>
+		}</br>
+</br>
+		public abstract class Shape {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected DrawAPI drawAPI;</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected Shape(DrawAPI drawAPI){</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.drawAPI = drawAPI;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public abstract void draw();</br>
+		}</br>
+</br>
+		public class Circle extends Shape {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private int x, y, radius;</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Circle(int x, int y, int radius, DrawAPI drawAPI) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(drawAPI);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.x = x;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.y = y;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.radius = radius;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void draw() {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawAPI.drawCircle(radius,x,y);</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}</br>
+</br>
+		public class BridgePatternDemo {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shape redCircle = new Circle(100,100, 10, new RedCircle());</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shape greenCircle = new Circle(100,100, 10, new GreenCircle());</br>
+</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redCircle.draw();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greenCircle.draw();</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		}
+		</p>
+		</br>
+
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

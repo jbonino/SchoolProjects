@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<h1>Observer</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>Object has a one-to-many relationship with other objects.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Object holds a list of dependents and lets them know when ever it changes.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p><ul>
+			<li><a href="command.html">Command</a></li>
+			<li><a href="chain_of_responsibility.html">Chain of Responsibility</a></li>
+		</ul></p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+		 //a realGUI is an existing object that has a 'logic' layer and a 'log' (to save all changes) as dependents.</br>
+		 //realGUI asks user a question and if its right then they win.</br>
+</br>
+		 class realGUI(){</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List &lt;Observer&gt; dependents;</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//when ever GUI is manipulated by user, run this</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stateChanged(changedstate s){</br>
+		 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all dependents{</br>
+		 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update(s)</br>
+		 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		 }</br>
+</br>
+		 class Observer{</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update(changed state s){</br>
+		 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abstract update(s);</br>
+		 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+		 }</br>
+		</p></br>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>

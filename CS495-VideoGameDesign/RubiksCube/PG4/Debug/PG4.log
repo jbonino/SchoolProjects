@@ -1,0 +1,95 @@
+﻿Build started 4/26/2016 9:49:33 PM.
+     1>Project "C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\PG4\PG4.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt glQuaternion.cpp PG4.cpp picinfo.cpp
+         picinfo.cpp
+         PG4.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.h(20): warning C4005: 'PI' : macro redefinition
+                 c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\glquaternion.h(12) : see previous definition of 'PI'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(117): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(118): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(119): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(151): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(152): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(153): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(154): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(155): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(158): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(159): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(160): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(161): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(162): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(165): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(166): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(167): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(168): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(169): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(172): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(173): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(174): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(175): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(176): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(179): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(180): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(181): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(182): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(183): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(186): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(187): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(188): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(189): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(190): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(203): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(204): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(205): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(206): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(207): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(210): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(211): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(212): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(213): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(214): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(217): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(218): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(219): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(220): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(221): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(224): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(225): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(226): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(227): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(228): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(231): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(232): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(233): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(234): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(235): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(238): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(239): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(240): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(241): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(242): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(255): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(256): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(260): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(260): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(261): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(262): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(263): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\pg4.cpp(263): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+         glQuaternion.cpp
+     1>c:\users\jbonino\dropbox\school\zfinished\cs495video\pg4\pg4\glquaternion.cpp(46): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\Debug\PG4.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\Debug\PG4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\Debug\PG4.lib" /MACHINE:X86 Debug\glQuaternion.obj
+         Debug\PG4.obj
+         Debug\picinfo.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         PG4.vcxproj -> C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\Debug\PG4.exe
+     1>Done Building Project "C:\Users\jbonino\Dropbox\School\zFinished\CS495Video\PG4\PG4\PG4.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.12

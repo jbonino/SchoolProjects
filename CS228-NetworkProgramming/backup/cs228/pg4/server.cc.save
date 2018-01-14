@@ -1,0 +1,144 @@
+#include <iostream>		// cout, cerr, etc
+#include <stdio.h>		// perror
+#include <string.h>		// bcopy
+#include <sstream>
+#include <netinet/in.h>		// struct sockaddr_in
+#include <unistd.h>		// read, write, etc
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+
+using namespace std;
+
+const int BUFSIZE=1024;
+
+void error(const char *msg,bool cond)
+{
+	if(cond){
+		perror(msg);
+		exit(1);
+	}
+}
+
+int MakeServerSocket(char *port) {
+	const int MAXNAMELEN = 255; //max length of buffer
+	const int BACKLOG = 3; //connections to socket
+	char localhostname[MAXNAMELEN]; //stream of chars
+	int s; //file descriptor
+	int len; //file descriptor
+	struct sockaddr_in sa; //socket address information
+	struct hostent *hp; //host info
+	struct servent *sp; //server info
+	int portnum; //port num
+	int ret; //file decriptor
+
+	gethostname(localhostname,MAXNAMELEN);
+	hp = gethostbyname(localhostname);
+	error("hp is null",!hp);
+	sscanf(port, "%d", &portnum);
+	if (portnum ==  0) {
+		sp=getservbyname(port, "tcp");
+		portnum = ntohs(sp->s_port);
+	}
+	sa.sin_port = htons(portnum);
+
+	bcopy((char *)hp->h_addr, (char *)&sa.sin_addr, hp->h_length);
+	sa.sin_family = hp->h_addrtype;
+
+	s = socket(hp->h_addrtype, SOCK_STREAM, 0);
+	error("Socket ERROR",s<0);
+	ret = bind(s, (struct sockaddr *)&sa, sizeof(sa));
+	error("Bind ERROR",ret<0);
+	listen(s, BACKLOG);
+	cout << "Waiting for connection on port " << port << " hostname " << localhostname << endl;
+	return s;
+}
+
+
+
+
+void parser(string buf,string& get,string& filename, string& version ){
+	istringstream is (buf);
+	is >> get;
+	is >> filename;
+	filename=filename.substr(1);
+	is >> version;
+}
+
+doWrite(string metadata,string filename){
+	//write metadata
+	wrote=write(client,metadata.c_str(),metadata.length());
+	error("Bad Meta Write",write<0);
+
+	//write file if exists
+
+}
+
+int main(int argc, char *argv[]) {
+
+	char buf[BUFSIZE]; //char stream
+	string get, filename, version, metadata;
+
+	int log=open("logfile", O_WRONLY | O_CREAT, 0660);
+	error("bad log",log<0);
+
+	int pid=fork();
+	error("fork wrong fool",pid<0);
+
+	if(pid==0){
+
+		//get what client sent
+		int r=read(client,buf,BUFSIZE);
+		error("Bad Read",r<0);
+		string buffer(buf,r);
+		parser(buf,get,filename,version);
+		int writer=write(log,filename.c_str(),filename.length());
+		error("bad write",writer<0);
+
+		//check version
+		if(version=="HTTP/0.9"){
+		//write to client
+		
+		//close socket
+		close(s);
+		}
+		else if(version=="HTTP/1.0"){
+
+		}
+		else{
+			cout<<"im in HTTP/1.1 nigga"<<endl;
+			cout<<get<<" space "<<filename<<" space "<<version<<endl;
+		}
+		//HTTP/1.1 200 OK
+		//Date: Mon, 30 Mar 2015 19:42:08 GMT
+		//Content-Length: 801
+		//Content-Type: text/html;charset=UTF-8
+		//if(version=="HTTP/1.1"
+		//send file
+		//int fileopen=open(filename.c_str(), O_RDONLY);
+		//error("File Not Found",fileopen<0);
+		//int reader=read(fileopen,buf, BUFSIZE);
+		//while(reader>0){
+		//	int a = write(client, buf, reader);
+                //	error("writes broke fool/hung up",a<0);
+		//	reader = read(fileopen, buf, BUFSIZE);
+        	//}
+	}
+	else{
+		int w;
+		int status;
+		do{ w=waitpid(-1, &status, WNOHANG); }
+		while (w>0);
+
+
+	}
+}
+
+
+
+
+

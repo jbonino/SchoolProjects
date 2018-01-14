@@ -1,0 +1,7 @@
+Ryan Cirese
+
+We want to design a endless 2d runner. Their would be a giant wave
+displaying on the screen where you play as a surfer riding the wave.
+You will be dodging coral, snorkelers, sharks, octopi, garbage, etc.
+There is no way to win the game other then get a higher score then yourself
+or another player.

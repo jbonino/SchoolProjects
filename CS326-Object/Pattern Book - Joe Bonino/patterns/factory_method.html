@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<h1>Factory Method</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>A need to create multiple instances of a new object.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>We create a concrete factory object which we can call to have an object constructed and then passed to us.</br> The factory object hides creation logic.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<ul>
+			<li><a href="abstract_factory.html">Abstract Factory</a></li>
+			<li><a href="builder.html">Builder</a></li>
+			<li><a href="prototype.html">Prototype</a></li>
+		</ul>
+		</br>
+		<h3>Example (Pseudo Code)</h3>
+		<p>
+			Shape shapeFactory(string shape,string color){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				if(shape=="square")</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					return new square(color);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				if(shape=="triangle")</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					return new triangle(color);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				if(shape=="triangle")</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					return new triangle(color);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				return NULL;</br>
+			}</br>
+		</p>
+		</br>
+		<a href="../index.html">Home</a>
+	</body>
+</html>

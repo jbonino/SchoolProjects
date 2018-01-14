@@ -1,0 +1,110 @@
+Program :
+	"program" Name VariableSection ProcedureSection "main" Statements "endProgram"
+		{MiniProgramNode name: '2' variables: '3' procedures: '4' main: '6'};
+
+VariableSection :
+	"variables" (VariableDeclarations)? {MiniVariableSectionNode variables: '2'};
+	
+ProcedureSection :
+	"procedures" (ProcedureDeclarations)? {MiniProcedureSectionNode procedures: '2'};
+
+VariableDeclarations :
+	VariableDeclaration 
+	| VariableDeclarations  VariableDeclaration {'1' add: '2'; yourself};
+	
+VariableDeclaration :
+	Name ":" Type {MiniVariableDeclarationNode name: '1' type: '3'};
+
+ProcedureDeclarations :
+	ProcedureDeclaration 
+	| ProcedureDeclarations ProcedureDeclaration {'1' add: '2'; yourself};
+	
+ProcedureDeclaration :
+	"procedure" Name Parameters Statements "endprocedure" 
+		{MiniProcedureNode name: '2' parameters: '3' statements: '4'}
+	| "function" Name Parameters ":" Type Statements "endfunction" 
+		{MiniFunctionNode name: '2' parameters: '3' type: '5' statements: '6'};
+
+Parameters :
+	"(" VariableDeclarations? ")" {MiniParametersNode parameters: '2'};
+	
+Statements :
+	Statement  {MiniStatementsNode statement: '1'}
+	| Statements Statement {'1' , '2'};
+
+Statement :
+	Assignment {'1'}
+	| IfStatement {'1'}
+	| WhileStatement {'1'}
+	| ProcedureCallStatement {'1'}
+	| IOStatement {'1'};
+
+Assignment :
+	Name ":=" Expression {MiniAssignmentNode lhs: '1' rhs: '3'};
+
+IfStatement :
+	"if" Expression "then" Statements "endif" {MiniIfNode relation: '2' statements: '4'}
+	| "if" Expression "then" Statements "else" Statements "endif" {MiniIfElseNode relation: '2' statements: '4' elseStatements: '6'};
+		
+WhileStatement :
+	"while" Expression "do" Statements "endwhile" {MiniWhileNode relation: '2' statements: '4'};
+	
+IOStatement :
+	"writeString" "(" Expression ")" {MiniWriteStringNode expr: '3'}
+	| "writeInteger" "(" Expression ")" {MiniWriteIntegerNode expr: '3'}
+	| "writeLine" {MiniWriteLnNode new};
+	
+ProcedureCallStatement :
+	Name Arguments {MiniProcedureCallNode name: '1' arguments: '2'};
+	
+FunctionCallExpression :
+	Name Arguments {MiniFunctionCallNode name: '1' arguments: '2'};
+	
+Arguments :
+	"(" ExpressionList? ")" {MiniArgumentsNode arguments: '2'};
+			
+ExpressionList :
+	Expression {OrderedCollection with: '1'}
+	| ExpressionList "," Expression {'1' add: '3'; yourself};
+	
+Expression :
+	SimpleExpression {'1'}
+	| SimpleExpression Relation SimpleExpression {'2' arg1: '1'; arg2: '3'; yourself};
+	
+SimpleExpression :
+	String {'1'}
+	| Term {'1'}
+	| Term AddOperator Term {'2' arg1: '1'; arg2: '3'; yourself};
+	
+Relation :
+	"=" {MiniEqualNode new}
+	| "<" {MiniLessThanNode new}
+	| ">" {MiniGreaterThanNode new};
+
+Term :
+	Factor {'1'}
+	| Factor MulOperator Factor {'2' arg1: '1'; arg2: '3'; yourself};
+	
+Factor :
+	Integer {'1'}
+	| Name {'1'}
+	| FunctionCallExpression {'1'}
+	| "(" Expression ")" {MiniGroupNode expr: '2'};
+	
+AddOperator :
+	"+" {MiniAddOpNode new}
+	| "-" {MiniSubOpNode new};
+	
+MulOperator :
+	"*" {MiniMulOpNode new}
+	| "/" {MiniDivOpNode new};
+
+Type : 
+	"string" {MiniNameNode token: '1'}
+	| "integer" {MiniNameNode token: '1'};
+
+Name : <identifier> {MiniNameNode token: '1'};
+
+String : <string> {MiniStringNode token: '1'};
+	
+Integer : <number> {MiniNumberNode token: '1'};

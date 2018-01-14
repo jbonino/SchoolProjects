@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<h1>Adapter</h1>
+	</head>
+	<body>
+		<h3>Forces</h3></br>
+		<p>Two objects interfaces need to communicate properly.</p></br>
+
+		<h3>Solution</h3></br>
+		<p>Create a single class which is responsible to join functionalities of the independent interfaces.</p></br>
+
+		<h3>Related Patters</h3></br>
+		<p>
+			<li><a href="bridge.html">Bridge</a></li>
+			<li><a href="proxy.html">Proxy</a></li>
+			<li><a href="decorator.html">Decorator</a></li>
+		</p></br>
+
+		<h3>Example (Pseudo)</h3>
+		<p>
+		</br>
+		//We have one object that takes in a JSON string - method(string JSON)</br>
+		//We have another object that returns a shape - shape();.</br>
+		//Our adapted will accept a shape object and return a JSON string.</br></br>
+
+		string adapter(Shape s){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return parse(s)</br>
+		}</br>
+		method(adapter(shape()));
+		</p></br>
+
+		<a href="../index.html">Home</a>
+	</body>
+</html>
